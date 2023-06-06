@@ -31,7 +31,7 @@ const { writeFileSync } = require("fs");
 
     d = await getRawProfile(`${client.user.id}`, "athena");
     for (const [key, value] of Object.entries(d["profileChanges"][0]["profile"]["items"])) {
-        if (value.templateId === "Accolades:accoladeid_stw_mission_sk_victory") return writeFileSync("MSKCount.txt", `MSK Clears: ${3410 + value.attributes.earned_count}`);
+        if (value.templateId === "Accolades:accoladeid_stw_mission_sk_victory") return writeFileSync("MSKCount.txt", `MSK Clears: ${value.attributes.earned_count}`);
     }
     // process.exit();
 })();
